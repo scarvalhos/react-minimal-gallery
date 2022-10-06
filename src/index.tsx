@@ -2,7 +2,19 @@ import * as React from 'react'
 
 import { c } from './utils'
 
-const Gallery: React.FC = ({
+import './styles/globals.css'
+
+interface FileRecord {
+  url: string
+  title: string
+}
+
+interface GalleryProps {
+  images: FileRecord[]
+  containerClassName?: string
+}
+
+const Gallery: React.FC<GalleryProps> = ({
   images,
   containerClassName = 'w-[300px] space-y-1',
 }) => {
@@ -51,4 +63,3 @@ const Gallery: React.FC = ({
 }
 
 export default Gallery
-
