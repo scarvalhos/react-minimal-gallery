@@ -2,7 +2,7 @@ import * as React from 'react'
 
 import { c } from './utils'
 
-import './styles/globals.css'
+import './styles.css'
 
 interface FileRecord {
   url: string
