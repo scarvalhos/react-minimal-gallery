@@ -1,6 +1,6 @@
 {
-  "name": "react-gallery-images",
-  "version": "1.0.0",
+  "name": "react-gallery-image",
+  "version": "1.0.1",
   "main": "src/index.js",
   "author": "Samara Carvalho",
   "license": "MIT"

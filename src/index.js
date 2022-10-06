@@ -2,17 +2,7 @@ import * as React from 'react'
 
 import { c } from './utils'
 
-interface FileRecord {
-  url: string
-  title: string
-}
-
-interface GalleryProps {
-  images: FileRecord[]
-  containerClassName?: string
-}
-
-const Gallery: React.FC<GalleryProps> = ({
+const Gallery: React.FC = ({
   images,
   containerClassName = 'w-[300px] space-y-1',
 }) => {
