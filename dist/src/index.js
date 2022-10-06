@@ -25,7 +25,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const React = __importStar(require("react"));
 const utils_1 = require("./utils");
-require("./styles/globals.css");
+require("./styles.css");
 const Gallery = ({ images, containerClassName = 'w-[300px] space-y-1', }) => {
     const [mainImage, setMainImage] = React.useState(images[0]);
     const [hover, setHover] = React.useState(false);
