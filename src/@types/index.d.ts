@@ -1,1 +1,1 @@
-declare module 'react-gallery-images'
+declare module 'react-gallery-image'

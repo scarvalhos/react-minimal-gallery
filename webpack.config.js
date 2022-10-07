@@ -24,14 +24,8 @@ module.exports = {
         exclude: /node_modules/,
         use: [
           { loader: MiniCssExtractPlugin.loader },
-          {
-            loader: 'babel-loader',
-            options: {
-                plugins: [
-                    isDevelopment && require.resolve('react-refresh/babel')
-                ].filter(Boolean)
-            }
-        }],
+          { loader: "babel-loader" },
+        ],
       },
       {
         test: /\.css$/,
