@@ -8,8 +8,9 @@ module.exports = {
   entry: "./src/index.tsx",
   devtool: 'inline-source-map',
   output: {
-    filename: 'bundle.js',
+    filename: "index.js",
     path: path.resolve(__dirname, 'dist'),
+    libraryTarget: "commonjs2"
   },
   module: {
     rules: [
