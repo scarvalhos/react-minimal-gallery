@@ -6,3 +6,8 @@ export const c = (...arr: (string | undefined | null | false)[]) => {
 
   return classes.length < 1 ? undefined : classes
 }
+
+export const strtonum = (s?: string | null): number => {
+  if (!s) return 0
+  return +s.replace(/[^\d,-]/g, '').replace(',', '.') || 0
+}
