@@ -1,4 +1,5 @@
-var path = require("path");
+const path = require("path")
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 const isDevelopment = process.env.NODE_ENV !== 'production'
 
@@ -20,18 +21,20 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        use: {
+        use: [
+          { loader: MiniCssExtractPlugin.loader },
+          {
             loader: 'babel-loader',
             options: {
                 plugins: [
                     isDevelopment && require.resolve('react-refresh/babel')
                 ].filter(Boolean)
             }
-        },
+        }],
       },
       {
         test: /\.css$/,
-        exclude: /node_modules/,
+        include: path.resolve(__dirname, 'src'),
         use: ['style-loader', 'css-loader', 'postcss-loader'],
       }
     ]
@@ -42,4 +45,9 @@ module.exports = {
   externals: {
     react: "react"
   },
+  plugins: [
+    new MiniCssExtractPlugin({
+      filename: 'styles.css'
+    })
+  ]
 };
