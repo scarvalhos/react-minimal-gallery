@@ -17,10 +17,8 @@
     "noEmit": true,
     "jsx": "react"
   },
-  "include": ["**/*.ts","**/*.tsx", "**/*.d.ts"],
-  "exclude": [
-      "node_modules",
-  ]
+  "include": ["src"],
+  "exclude": ["node_modules", "build", "dist", "example", "rollup.config.js"]
 }
 
 // {
