@@ -1,8 +1,8 @@
 {
   "name": "react-minimal-gallery",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "A minimalist image gallery package build with tailwincss for simple projects",
-  "main": "./index.ts",
+  "main": "./dist/index.ts",
   "author": "Samara Carvalho",
   "license": "MIT",
   "types": "./dist/index.d.ts",
@@ -26,8 +26,7 @@
   ],
   "files": [
     "dist/**/*",
-    "src/**/*",
-    "./index.ts"
+    "src/**/*"
   ],
   "scripts": {
     "build": "rm -rf dist/ && tsc && rollup -c",
