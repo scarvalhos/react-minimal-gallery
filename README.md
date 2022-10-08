@@ -6,7 +6,7 @@ Please note that the project is still under development.
 
 ## Demo
 
-![demo gif](https://github.com/scarvalhos/react-minimal-gallery/raw/main/assets/demo-react-minimal-gallery.gif)
+![demo gif](https://github.com/scarvalhos/react-minimal-gallery/raw/main/assets/demo-react-minimal-gallery.webm)
 
 ## Features
 
