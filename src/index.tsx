@@ -1,1 +1,1 @@
-export { default } from './components/ReactSimpleGallery'
+export { ReactSimpleGallery } from './components/ReactSimpleGallery'

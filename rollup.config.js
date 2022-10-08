@@ -25,19 +25,20 @@ export default [
         config: {
             path: './postcss.config.js'
         },
+        extensions: ['.css'],
+        extract: false
+      }),
+      postcss({
+        config: {
+            path: './postcss.config.js'
+        },
         use: {               
             less: { javascriptEnabled: true }
         },
         extensions: ['.less'], // Looks like this still processes CSS despite this line.
         extract: false         
       }),
-      postcss({
-          config: {
-              path: './postcss.config.js'
-          },
-          extensions: ['.css'],
-          extract: false
-      })  
+
     ]
   }
 ];

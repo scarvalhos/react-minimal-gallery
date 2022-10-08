@@ -5,7 +5,7 @@ import { c, strtonum } from '../utils/index'
 
 import '../styles.css'
 
-const ReactSimpleGallery: React.FC<ReactSimpleGalleryProps> = ({
+export const ReactSimpleGallery: React.FC<ReactSimpleGalleryProps> = ({
   images,
   containerClassName = 'w-[300px] space-y-1',
   mainImageClassName,
@@ -120,5 +120,3 @@ const ReactSimpleGallery: React.FC<ReactSimpleGalleryProps> = ({
     </div>
   )
 }
-
-export default ReactSimpleGallery
