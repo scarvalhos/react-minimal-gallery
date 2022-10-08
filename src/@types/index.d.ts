@@ -11,17 +11,20 @@ export type ReactMinimalGalleryProps = {
   width?: string | number
   thumbnailWidth?: string | number
 }
-
 declare namespace ReactMinimalGallery {
-  export interface ReactMinimalGalleryProps {
-    images: FileRecord[]
-    containerClassName?: string
-    mainImageClassName?: string
-    paginationColor?: string
-    hoverColor?: string
-    width?: string | number
-    thumbnailWidth?: string | number
-  }
+  var images: FileRecord[]
+
+  var containerClassName: string | undefined
+
+  var mainImageClassName: string | undefined
+
+  var paginationColor: string | undefined
+
+  var hoverColor: string | undefined
+
+  var width: string | number | undefined
+
+  var thumbnailWidth: string | number | undefined
 }
 
 declare module 'react-minimal-gallery' {
