@@ -17,15 +17,15 @@ ReactMinimalGalleryTemplate.args = {
   images: [
     {
       title: 'Image 01',
-      url: 'https://hytzenshop.s3.amazonaws.com/fd3a2052a408a9cafde05ea4c2a23631-camiseta-justice-league-01.webp',
+      url: 'https://images.pexels.com/photos/1379636/pexels-photo-1379636.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     },
     {
-      title: 'Image 02',
-      url: 'https://hytzenshop.s3.amazonaws.com/059576149ee92703886bf643b9cce4a9-camiseta-dc-comics-logo-04.png',
+      title: 'Image 04',
+      url: 'https://images.pexels.com/photos/2781760/pexels-photo-2781760.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     },
     {
       title: 'Image 03',
-      url: 'https://hytzenshop.s3.amazonaws.com/76369193225fdfcb9352bd98cd6c047f-camiseta-dc-comics-logo-02.png',
+      url: 'https://images.pexels.com/photos/1525041/pexels-photo-1525041.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     },
   ],
 }

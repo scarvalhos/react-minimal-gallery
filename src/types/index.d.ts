@@ -30,7 +30,7 @@ declare namespace ReactMinimalGallery {
 }
 
 declare module 'react-minimal-gallery' {
-  type ReactMinimalGallery = {
+  type ReactMinimalGalleryTypes = {
     images: FileRecord[]
     containerClassName?: string
     mainImageClassName?: string
@@ -40,5 +40,5 @@ declare module 'react-minimal-gallery' {
     thumbnailWidth?: string | number
   }
 
-  export type ReactMinimalGalleryProps = ReactMinimalGallery
+  export type ReactMinimalGalleryProps = ReactMinimalGalleryTypes
 }
