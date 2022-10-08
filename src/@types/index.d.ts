@@ -2,8 +2,7 @@ export interface FileRecord {
   url: string
   title: string
 }
-
-export interface GalleryProps {
+export type ReactSimpleGalleryProps = {
   images: FileRecord[]
   containerClassName?: string
   mainImageClassName?: string
@@ -13,4 +12,26 @@ export interface GalleryProps {
   thumbnailWidth?: string | number
 }
 
-declare module 'react-gallery-image'
+declare namespace ReactSimpleGallery {
+  export interface ReactSimpleGalleryProps {
+    images: FileRecord[]
+    containerClassName?: string
+    mainImageClassName?: string
+    paginationColor?: string
+    hoverColor?: string
+    width?: string | number
+    thumbnailWidth?: string | number
+  }
+}
+
+declare module 'react-simple-gallery' {
+  export type ReactSimpleGalleryProps = {
+    images: FileRecord[]
+    containerClassName?: string
+    mainImageClassName?: string
+    paginationColor?: string
+    hoverColor?: string
+    width?: string | number
+    thumbnailWidth?: string | number
+  }
+}

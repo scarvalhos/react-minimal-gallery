@@ -1,6 +1,8 @@
+import React from 'react'
+
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 
-import ReactGalleryImages from './ReactGalleryImages'
+import ReactGalleryImages from './ReactSimpleGallery'
 
 const Template: ComponentStory<typeof ReactGalleryImages> = (args) => (
   <ReactGalleryImages {...args} />

@@ -1,6 +1,6 @@
 {
-  "name": "react-gallery-image",
-  "version": "1.1.4",
+  "name": "react-simple-gallery",
+  "version": "1.1.5",
   "main": "./dist/index.js",
   "author": "Samara Carvalho",
   "license": "MIT",
@@ -10,7 +10,12 @@
     "carousel",
     "images",
     "react-gallery",
-    "gallery-images"
+    "gallery-images",
+    "react-images",
+    "react-component",
+    "react-slideshow",
+    "image gallery",
+    "image carousel"
   ],
   "scripts": {
     "build": "rollup -c",
