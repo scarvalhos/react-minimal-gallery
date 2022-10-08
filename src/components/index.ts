@@ -1,0 +1,1 @@
+export { ReactMinimalGallery } from './ReactMinimalGallery'

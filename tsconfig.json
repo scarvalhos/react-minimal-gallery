@@ -1,7 +1,8 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "es6",
     "outDir": "dist",
+    "lib": ["ES5", "ES2015", "ES2016", "DOM", "ESNext"],
     "declaration": true,
     "declarationDir": "dist",
     "allowJs": true,
@@ -10,37 +11,16 @@
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
-    "module": "esnext",
+    "module": "ES2015"  ,
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react"
+    "jsx": "react",
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "noUnusedLocals": true
   },
-  "include": ["src"],
+  "include": ["src/**/*.ts", "src/**/*.tsx","src/**/*.d.ts"],
   "exclude": ["node_modules", "build", "dist", "example", "rollup.config.js"]
 }
-
-// {
-//   "compilerOptions": {
-//     "target": "es5",
-//     "allowJs": true,
-//     "skipLibCheck": true,
-//     "strict": true,
-//     "forceConsistentCasingInFileNames": true,
-//     "esModuleInterop": true,
-//     "module": "ESNext",
-//     "moduleResolution": "node",
-//     "resolveJsonModule": true,
-//     "isolatedModules": true,
-//     "incremental": true,
-//     "noEmit": true,
-//     "jsx": "preserve",
-//     "rootDir": "./",
-//     "outDir": "dist",
-//     "sourceMap": true,
-//     "baseUrl": "./"
-//   },
-//   "include": ["**/*.ts", "**/*.tsx"],
-//   "exclude": ["node_modules"]
-// }

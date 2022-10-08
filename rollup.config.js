@@ -8,17 +8,12 @@ import sucrase from '@rollup/plugin-sucrase'
 
 export default [
   {
-    input: './src/index.tsx',
+    input: './src/index.ts',
     output: [
       {
         dir: 'dist',
         format: 'cjs',
       },
-      // {
-      //   file: './src/types/index.d.ts',
-      //   dir: 'dist/types',
-      //   format: 'cjs',
-      // },
     ],
     plugins: [
       typescript({
