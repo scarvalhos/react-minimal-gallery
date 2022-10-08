@@ -2,14 +2,14 @@ import React from 'react'
 
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 
-import { ReactSimpleGallery } from './ReactSimpleGallery'
+import { ReactMinimalGallery } from './ReactMinimalGallery'
 
-const Template: ComponentStory<typeof ReactSimpleGallery> = (args) => (
-  <ReactSimpleGallery {...args} />
+const Template: ComponentStory<typeof ReactMinimalGallery> = (args) => (
+  <ReactMinimalGallery {...args} />
 )
 
-export const ReactSimpleGalleryTemplate = Template.bind({})
-ReactSimpleGalleryTemplate.args = {
+export const ReactMinimalGalleryTemplate = Template.bind({})
+ReactMinimalGalleryTemplate.args = {
   hoverColor: '#2DC573',
   paginationColor: '#1a1a1a',
   width: '400px',
@@ -31,6 +31,6 @@ ReactSimpleGalleryTemplate.args = {
 }
 
 export default {
-  title: 'ReactSimpleGallery',
-  component: ReactSimpleGallery,
-} as ComponentMeta<typeof ReactSimpleGallery>
+  title: 'ReactMinimalGallery',
+  component: ReactMinimalGallery,
+} as ComponentMeta<typeof ReactMinimalGallery>

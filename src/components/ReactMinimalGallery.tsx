@@ -1,11 +1,11 @@
 import * as React from 'react'
 
-import { FileRecord, ReactSimpleGalleryProps } from '../@types/index'
+import { FileRecord, ReactMinimalGalleryProps } from '../@types/index'
 import { c, strtonum } from '../utils/index'
 
 import '../styles.css'
 
-export const ReactSimpleGallery: React.FC<ReactSimpleGalleryProps> = ({
+export const ReactMinimalGallery: React.FC<ReactMinimalGalleryProps> = ({
   images,
   containerClassName = 'w-[300px] space-y-1',
   mainImageClassName,

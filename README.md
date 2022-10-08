@@ -1,6 +1,6 @@
-# React Simple Gallery [![npm version](https://badge.fury.io/js/react-gallery-image.svg)](https://badge.fury.io/js/react-gallery-image)
+# React Minimal Gallery [![npm version](https://badge.fury.io/js/react-minimal-gallery.svg)](https://badge.fury.io/js/react-minimal-gallery)
 
-React Simple Gallery is a minimalist image gallery build with tailwincss for simple projects.
+React Minimal Gallery is a minimalist image gallery build with tailwincss for simple projects.
 
 ## Features
 
@@ -10,24 +10,24 @@ React Simple Gallery is a minimalist image gallery build with tailwincss for sim
 
 ## Getting started
 
-React Simple Gallery requires **React 16.0.0 or later.**
+React Minimal Gallery requires **React 16.0.0 or later.**
 
 npm:
 
 ```
-npm install react-simple-gallery
+npm install react-minimal-gallery
 ```
 
 yarn:
 
 ```
-yarn add react-simple-gallery
+yarn add react-minimal-gallery
 ```
 
 ### Example
 
 ```js
-import ReactSimpleGallery from 'react-simple-gallery';
+import ReactMinimalGallery from 'react-minimal-gallery';
 
 const images = [
   {
@@ -46,7 +46,7 @@ const images = [
 
 const MyGallery: React.FC = () => {
   return (
-    <ReactSimpleGallery
+    <ReactMinimalGallery
       images={images}
       width={400}
       thumbnailWidth={100}
@@ -80,8 +80,8 @@ Each PR should be specific and isolated to the issue you're trying to fix. Pleas
 # Build the example locally (requires node >= 12.13)
 
 ```
-git clone https://github.com/scarvalhos/react-simple-gallery.git
-cd react-simple-gallery
+git clone https://github.com/scarvalhos/react-minimal-gallery.git
+cd react-minimal-gallery
 npm install --global yarn
 yarn
 yarn start

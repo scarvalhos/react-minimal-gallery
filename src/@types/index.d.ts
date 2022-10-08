@@ -2,7 +2,7 @@ export interface FileRecord {
   url: string
   title: string
 }
-export type ReactSimpleGalleryProps = {
+export type ReactMinimalGalleryProps = {
   images: FileRecord[]
   containerClassName?: string
   mainImageClassName?: string
@@ -12,8 +12,8 @@ export type ReactSimpleGalleryProps = {
   thumbnailWidth?: string | number
 }
 
-declare namespace ReactSimpleGallery {
-  export interface ReactSimpleGalleryProps {
+declare namespace ReactMinimalGallery {
+  export interface ReactMinimalGalleryProps {
     images: FileRecord[]
     containerClassName?: string
     mainImageClassName?: string
@@ -24,8 +24,8 @@ declare namespace ReactSimpleGallery {
   }
 }
 
-declare module 'react-simple-gallery' {
-  export type ReactSimpleGalleryProps = {
+declare module 'react-minimal-gallery' {
+  export type ReactMinimalGalleryProps = {
     images: FileRecord[]
     containerClassName?: string
     mainImageClassName?: string

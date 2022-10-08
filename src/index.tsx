@@ -1,1 +1,1 @@
-export { ReactSimpleGallery } from './components/ReactSimpleGallery'
+export { ReactMinimalGallery } from './components/ReactMinimalGallery'
