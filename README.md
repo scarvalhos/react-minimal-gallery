@@ -2,6 +2,12 @@
 
 React Minimal Gallery is a minimalist image gallery build with tailwincss for simple projects.
 
+Please note that the project is still under development.
+
+## Demo
+
+![demo gif](https://github.com/scarvalhos/react-minimal-gallery/raw/main/static/demo-react-minimal-gallery.gif)
+
 ## Features
 
 * Thumbnail pagination
