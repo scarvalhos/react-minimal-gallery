@@ -4,6 +4,7 @@
   "main": "./dist/index.js",
   "author": "Samara Carvalho",
   "license": "MIT",
+  "types": "./dist/index.d.ts",
   "keywords": [
     "react",
     "gallery",
