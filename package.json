@@ -1,10 +1,15 @@
 {
   "name": "react-minimal-gallery",
   "version": "1.0.1",
+  "description": "A minimalist image gallery package build with tailwincss for simple projects",
   "main": "./dist/index.js",
   "author": "Samara Carvalho",
   "license": "MIT",
   "types": "./dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/scarvalhos/react-minimal-gallery"
+  },
   "keywords": [
     "react",
     "gallery",
@@ -18,8 +23,11 @@
     "image gallery",
     "image carousel"
   ],
+  "files": [
+    "dist/**/*"
+  ],
   "scripts": {
-    "build": "rollup -c",
+    "build": "tsc && rollup -c",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "push": "npm publish"
