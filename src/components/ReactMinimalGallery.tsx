@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { FileRecord, ReactMinimalGalleryProps } from '../@types/index'
+import { FileRecord, ReactMinimalGalleryProps } from '../typing/index'
 import { c, strtonum } from '../utils/index'
 
 import '../styles.css'
