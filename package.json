@@ -1,6 +1,6 @@
 {
   "name": "react-minimal-gallery",
-  "version": "1.1.7",
+  "version": "1.1.8",
   "description": "A minimalist image gallery package build with tailwincss for simple projects",
   "main": "./dist/index.js",
   "author": "Samara Carvalho",
@@ -29,7 +29,7 @@
     "src/**/*"
   ],
   "scripts": {
-    "build": "rm -rf dist/ && tsc && rollup -c",
+    "build": "rm -rf dist/ && tsc && rollup -c && npx tailwindcss -o ./dist/styles.css && cp ./src/types ./dist -r",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "push": "npm publish"
@@ -87,6 +87,7 @@
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-icons": "^4.4.0",
     "rollup": "^2.79.1"
   },
   "resolutions": {

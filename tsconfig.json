@@ -19,7 +19,8 @@
     "jsx": "react",
     "sourceMap": true,
     "noImplicitAny": true,
-    "noUnusedLocals": true
+    "noUnusedLocals": true,
+    "baseUrl": "./"
   },
   "include": ["src/**/*.ts", "src/**/*.tsx","src/**/*.d.ts"],
   "exclude": ["node_modules", "build", "dist", "example", "rollup.config.js"]

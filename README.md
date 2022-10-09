@@ -36,18 +36,9 @@ yarn add react-minimal-gallery
 import ReactMinimalGallery from 'react-minimal-gallery';
 
 const images = [
-  {
-    title: 'Image 01',
-    url: 'https://images.pexels.com/photos/1379636/pexels-photo-1379636.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-  },
-  {
-    title: 'Image 04',
-    url: 'https://images.pexels.com/photos/2781760/pexels-photo-2781760.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-  },
-  {
-    title: 'Image 03',
-    url: 'https://images.pexels.com/photos/1525041/pexels-photo-1525041.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-  },
+  'https://images.pexels.com/photos/1379636/pexels-photo-1379636.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+  'https://images.pexels.com/photos/2781760/pexels-photo-2781760.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+  'https://images.pexels.com/photos/1525041/pexels-photo-1525041.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
 ];
 
 const MyGallery: React.FC = () => {
@@ -55,9 +46,9 @@ const MyGallery: React.FC = () => {
     <ReactMinimalGallery
       images={images}
       width={400}
+      height={400}
       thumbnailWidth={100}
       hoverColor="#2DC573"
-      paginationColor='#1a1a1a'
     />
   )
 }
@@ -70,10 +61,25 @@ const MyGallery: React.FC = () => {
   * `images` - array of objects with title and url properties
   * `containerClassName` - string with tailwindcss properties
   * `mainImageClassName` - string with tailwindcss properties
-  * `paginationColor` - string with hex color
   * `hoverColor` - string with hex color
   * `width` - string or number
+  * `height` - string or number
   * `thumbnailWidth` - string or number
+
+  ### To customize tailwindcss properties use the prefix 'tw-'.
+
+  Example:
+
+```js
+  const MyGallery: React.FC = () => {
+    return (
+      <ReactMinimalGallery
+        containerClassName="tw-bg-red-500"
+        mainImageClassName="tw-bg-opacity-50"
+      />
+    )
+  }
+```
 
 # Contributing
 

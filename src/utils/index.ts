@@ -11,3 +11,7 @@ export const strtonum = (s?: string | null): number => {
   if (!s) return 0
   return +s.replace(/[^\d,-]/g, '').replace(',', '.') || 0
 }
+
+export const randomId = () => {
+  return Math.floor(Date.now() * Math.random()).toString(36)
+}

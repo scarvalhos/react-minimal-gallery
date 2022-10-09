@@ -1,64 +1,78 @@
 import * as React from 'react'
 
-import { FileRecord, ReactMinimalGalleryProps } from '../types/index'
-import { c, strtonum } from '../utils/index'
+import { TbArrowRight, TbArrowLeft } from 'react-icons/tb'
+import { ReactMinimalGalleryProps } from '../types'
+import { c, randomId, strtonum } from '../utils'
 
 import '../styles.css'
 
 export const ReactMinimalGallery: React.FC<ReactMinimalGalleryProps> = ({
   images,
-  containerClassName = 'w-[300px] space-y-1',
+  containerClassName = 'tw-w-[300px] tw-space-y-1',
   mainImageClassName,
-  paginationColor = '#1a1a1a',
-  width = 400,
-  thumbnailWidth = 100,
   hoverColor,
+  width = 400,
+  height = 400,
+  thumbnailWidth = 100,
 }) => {
-  const w = typeof width === 'string' ? strtonum(width) : width
-  const tw =
-    typeof thumbnailWidth === 'string'
-      ? strtonum(thumbnailWidth)
-      : thumbnailWidth
+  const imagesArr = images.map((image) => {
+    return {
+      id: randomId(),
+      url: image,
+    }
+  })
 
-  const [mainImage, setMainImage] = React.useState(images[0])
   const [hover, setHover] = React.useState(false)
-  const [count, setCount] = React.useState(1)
+  const [count, setCount] = React.useState(0)
+  const [mainImage, setMainImage] = React.useState(imagesArr[count])
+  const [translate, setTranslate] = React.useState('0px')
 
-  const onThumbnailMouseOver = React.useCallback((image: FileRecord) => {
-    setMainImage(image)
-  }, [])
-
-  const counter = Math.ceil(images.length / (w / tw))
-
-  const paginationCounter = []
-
-  for (var i = 0; i < counter; i++) {
-    paginationCounter.push(i + 1)
-  }
-
-  const imagesSliced = images.slice(
-    Math.floor(w / tw) * (count - 1),
-    (count + 1) * Math.ceil(w / tw)
+  const tw = React.useMemo(
+    () =>
+      typeof thumbnailWidth === 'string'
+        ? strtonum(thumbnailWidth)
+        : thumbnailWidth,
+    [thumbnailWidth]
   )
+
+  React.useEffect(() => {
+    setMainImage(imagesArr[count])
+    setTranslate(`-${count * (tw - tw / count)}px`)
+  }, [count])
 
   return (
     <div
       className={c(containerClassName)}
       style={{
-        width: `${w}px`,
-        height: `${w}px`,
+        width,
+        height:
+          typeof height === 'string' ? strtonum(height) + tw : height + tw,
       }}
     >
       <div
-        className={c('overflow-hidden rounded-sm')}
+        className={c('tw-overflow-hidden tw-rounded-sm tw-relative')}
         style={{
-          width: `${w}px`,
-          height: `${w}px`,
+          width,
+          height,
         }}
       >
+        <button
+          className="tw-cursor-pointer tw-w-8 tw-h-8 tw-flex tw-items-center tw-justify-center tw-rounded-full tw-border-none tw-bg-black tw-bg-opacity-20 hover:tw-bg-opacity-50 tw-transition-all tw-absolute tw-left-2 tw-top-[50%] -tw-translate-y-[50%] tw-z-[999]"
+          disabled={count === 0}
+          onClick={() => setCount(count - 1)}
+        >
+          <TbArrowLeft className="tw-w-4 tw-h-4 tw-text-white" />
+        </button>
+        <button
+          className="tw-cursor-pointer tw-w-8 tw-h-8 tw-flex tw-items-center tw-justify-center tw-rounded-full tw-border-none tw-bg-black tw-bg-opacity-20 hover:tw-bg-opacity-50 tw-transition-all tw-absolute tw-right-2 tw-top-[50%] -tw-translate-y-[50%] tw-z-[999]"
+          disabled={count === imagesArr.length - 1}
+          onClick={() => setCount(count + 1)}
+        >
+          <TbArrowRight className="tw-w-4 tw-h-4 tw-text-white" />
+        </button>
         <div
           className={c(
-            'bg-cover bg-center h-full w-full rounded-sm',
+            'tw-bg-cover tw-bg-center tw-h-full tw-w-full tw-rounded-sm',
             mainImageClassName
           )}
           style={{
@@ -68,54 +82,51 @@ export const ReactMinimalGallery: React.FC<ReactMinimalGalleryProps> = ({
           }}
           onClick={() => setHover(!hover)}
           onMouseLeave={() => setHover(false)}
-          id="main-image"
         />
       </div>
 
-      <div className="w-full flex flex-row space-x-1 overflow-hidden scrollbar-hidden">
-        <div className={c('flex flex-row rounded-sm transition-all')}>
-          {imagesSliced.map((image) => (
+      <div className="tw-w-full tw-flex tw-flex-row tw-overflow-hidden">
+        <div
+          className={c(
+            'tw-flex tw-flex-row tw-space-x-[0.5px] tw-rounded-sm tw-transition-all'
+          )}
+          style={{
+            transform: `translateX(${translate})`,
+          }}
+        >
+          {imagesArr.map((image) => (
             <div
-              key={image.title}
-              className="rounded-sm"
+              key={image.id}
+              className={c(
+                'tw-w-full tw-h-full tw-border-2 tw-border-solid tw-border-transparent tw-bg-no-repeat tw-bg-cover tw-bg-center tw-transition-all tw-ease-in tw-rounded-sm tw-cursor-pointer'
+              )}
               style={{
                 width: `${tw}px`,
                 height: `${tw}px`,
+                backgroundImage: `url(${image.url})`,
+                borderColor:
+                  image.url === mainImage.url ? hoverColor : 'transparent',
               }}
-            >
-              <div
-                className={c(
-                  'w-full h-full bg-no-repeat bg-cover bg-center transition-all ease-in rounded-sm border-[2px] border-transparent'
-                )}
-                style={{
-                  backgroundImage: `url(${image.url})`,
-                }}
-                onMouseOver={(e: any) => {
-                  e.target.style.borderColor = hoverColor
-                  onThumbnailMouseOver(image)
-                }}
-                onMouseLeave={(e: any) =>
-                  (e.target.style.borderColor = 'transparent')
-                }
-              />
-            </div>
+              onMouseOver={(e: any) =>
+                image.url !== mainImage.url &&
+                (e.target.style.borderColor = hoverColor)
+              }
+              onMouseLeave={(e: any) =>
+                image.url !== mainImage.url &&
+                (e.target.style.borderColor = 'transparent')
+              }
+              onClick={() => {
+                setCount(
+                  Number(
+                    imagesArr.lastIndexOf(
+                      imagesArr.find((i) => i.id === image.id) as any
+                    )
+                  )
+                )
+              }}
+            />
           ))}
         </div>
-      </div>
-      <div className="flex flex-row items-center justify-center space-x-1 pt-2">
-        {paginationCounter.map((i) => (
-          <button
-            key={i}
-            className="w-5 h-5 rounded-full text-white text-[10px] transition-all"
-            style={{
-              background: paginationColor,
-              opacity: count === i ? '1' : '0.6',
-            }}
-            onClick={() => setCount(i)}
-          >
-            {i}
-          </button>
-        ))}
       </div>
     </div>
   )

@@ -1,42 +1,39 @@
-export interface FileRecord {
-  url: string
-  title: string
-}
-
 export type ReactMinimalGalleryProps = {
-  images: FileRecord[]
+  images: string[]
   containerClassName?: string
   mainImageClassName?: string
   paginationColor?: string
   hoverColor?: string
   width?: string | number
+  height?: string | number
   thumbnailWidth?: string | number
 }
 
 declare namespace ReactMinimalGallery {
-  export const images: FileRecord[]
+  export const images: string[]
 
   export const containerClassName: string | undefined
 
   export const mainImageClassName: string | undefined
 
-  export const paginationColor: string | undefined
-
   export const hoverColor: string | undefined
 
   export const width: string | number | undefined
+
+  export const height: string | number | undefined
 
   export const thumbnailWidth: string | number | undefined
 }
 
 declare module 'react-minimal-gallery' {
   type ReactMinimalGalleryTypes = {
-    images: FileRecord[]
+    images: string[]
     containerClassName?: string
     mainImageClassName?: string
     paginationColor?: string
     hoverColor?: string
     width?: string | number
+    height?: string | number
     thumbnailWidth?: string | number
   }
 
