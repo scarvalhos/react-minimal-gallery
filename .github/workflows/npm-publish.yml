@@ -10,11 +10,14 @@ jobs:
     name: Publish
     runs-on: windows
     steps:
+      - name: checkout
         uses: actions/checkout@v3
+      - name: node
         uses: actions/setup-node@v3
         with:
           node-version: 16
           registry-url: https://npm.pkg.github.com/
+      - name: publish
         run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
