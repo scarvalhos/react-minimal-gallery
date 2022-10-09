@@ -7,6 +7,7 @@
   "license": "MIT",
   "types": "./dist/index.d.ts",
   "readmeFilename": "README.md",
+  "homepage": "https://scarvalhos.github.io/react-minimal-gallery",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/scarvalhos/react-minimal-gallery"
