@@ -1,4 +1,4 @@
-# React Minimal Gallery [![npm version](https://badge.fury.io/js/react-minimal-gallery.svg)](https://badge.fury.io/js/react-minimal-gallery)
+# React Minimal Gallery [![npm version](https://badge.fury.io/js/react-minimal-gallery.svg)](https://badge.fury.io/js/react-minimal-gallery) [![Download Count](https://img.shields.io/npm/dm/react-minimal-gallery.svg)](https://www.npmjs.com/package/react-minimal-gallery) [![Bundle size](https://badgen.net/bundlephobia/minzip/react-minimal-gallery)](https://bundlephobia.com/package/react-minimal-gallery)
 
 React Minimal Gallery is a minimalist image gallery build with tailwincss for simple projects.
 

@@ -1,6 +1,6 @@
 {
   "name": "react-minimal-gallery",
-  "version": "1.1.8",
+  "version": "1.1.9",
   "description": "A minimalist image gallery package build with tailwincss for simple projects",
   "main": "./dist/index.js",
   "author": "Samara Carvalho",
@@ -21,6 +21,9 @@
     "react-images",
     "react-component",
     "react-slideshow",
+    "react images",
+    "react slideshow",
+    "react gallery",
     "image gallery",
     "image carousel"
   ],
