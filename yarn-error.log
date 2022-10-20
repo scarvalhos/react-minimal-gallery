@@ -1,8 +1,8 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Users\samca\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js push
+  C:\Program Files\nodejs\node.exe C:\Users\samca\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js build
 
 PATH: 
-  C:\Users\samca\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\samca\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Windows\System32\OpenSSH;C:\ProgramData\chocolatey\bin;C:\Program Files\nodejs;C:\Program Files\OpenJDK\openjdk-11.0.15_10\bin;C:\Android\Sdk\emulator;C:\Android\Sdk\tools;C:\Android\Sdk\tools\bin;C:\Android\Sdk\platform-tools;C:\Users\samca\AppData\Local\Yarn\bin;C:\Program Files\Git\cmd;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Users\samca\AppData\Local\Microsoft\WindowsApps;C:\Users\samca\AppData\Roaming\npm;C:\Users\samca\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl
+  C:\Users\samca\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\samca\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Windows\System32\OpenSSH;C:\ProgramData\chocolatey\bin;C:\Program Files\nodejs;C:\Program Files\OpenJDK\openjdk-11.0.15_10\bin;C:\Android\Sdk\emulator;C:\Android\Sdk\tools;C:\Android\Sdk\tools\bin;C:\Android\Sdk\platform-tools;C:\Users\samca\AppData\Local\Yarn\bin;C:\Program Files\Git\cmd;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Program Files\Amazon\AWSCLIV2;C:\Users\samca\AppData\Local\Microsoft\WindowsApps;C:\Users\samca\AppData\Roaming\npm;C:\Users\samca\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl
 
 Yarn version: 
   1.22.19
@@ -27,13 +27,14 @@ Trace:
 npm manifest: 
   {
     "name": "react-minimal-gallery",
-    "version": "1.1.8",
+    "version": "1.2.0",
     "description": "A minimalist image gallery package build with tailwincss for simple projects",
     "main": "./dist/index.js",
     "author": "Samara Carvalho",
     "license": "MIT",
     "types": "./dist/index.d.ts",
     "readmeFilename": "README.md",
+    "homepage": "https://scarvalhos.github.io/react-minimal-gallery",
     "repository": {
       "type": "git",
       "url": "git+https://github.com/scarvalhos/react-minimal-gallery"
@@ -48,6 +49,9 @@ npm manifest:
       "react-images",
       "react-component",
       "react-slideshow",
+      "react images",
+      "react slideshow",
+      "react gallery",
       "image gallery",
       "image carousel"
     ],

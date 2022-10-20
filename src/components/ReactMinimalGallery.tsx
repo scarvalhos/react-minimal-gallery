@@ -15,16 +15,24 @@ export const ReactMinimalGallery: React.FC<ReactMinimalGalleryProps> = ({
   height = 400,
   thumbnailWidth = 100,
 }) => {
-  const imagesArr = images.map((image) => {
-    return {
-      id: randomId(),
-      url: image,
-    }
-  })
+  const imagesArr = React.useMemo(
+    () =>
+      images.map((image) => {
+        return {
+          id: randomId(),
+          url: image,
+        }
+      }),
+    [images]
+  )
 
   const [hover, setHover] = React.useState(false)
   const [count, setCount] = React.useState(0)
-  const [mainImage, setMainImage] = React.useState(imagesArr[count])
+
+  const [mainImage, setMainImage] = React.useState<{
+    id: string
+    url: string
+  } | null>(imagesArr[count])
   const [translate, setTranslate] = React.useState('0px')
 
   const tw = React.useMemo(
@@ -35,10 +43,15 @@ export const ReactMinimalGallery: React.FC<ReactMinimalGalleryProps> = ({
     [thumbnailWidth]
   )
 
+  React.useLayoutEffect(() => {
+    setCount(0)
+    setTranslate('0px')
+  }, [imagesArr])
+
   React.useEffect(() => {
     setMainImage(imagesArr[count])
     setTranslate(`-${count * (tw - tw / count)}px`)
-  }, [count])
+  }, [count, imagesArr, tw])
 
   return (
     <div
@@ -76,7 +89,7 @@ export const ReactMinimalGallery: React.FC<ReactMinimalGalleryProps> = ({
             mainImageClassName
           )}
           style={{
-            backgroundImage: `url(${mainImage.url})`,
+            backgroundImage: `url(${mainImage?.url})`,
             transform: hover ? 'scale(2)' : 'scale(1)',
             cursor: hover ? 'zoom-out' : 'zoom-in',
           }}
@@ -103,16 +116,16 @@ export const ReactMinimalGallery: React.FC<ReactMinimalGalleryProps> = ({
               style={{
                 width: `${tw}px`,
                 height: `${tw}px`,
-                backgroundImage: `url(${image.url})`,
+                backgroundImage: `url(${image?.url})`,
                 borderColor:
-                  image.url === mainImage.url ? hoverColor : 'transparent',
+                  image?.id === mainImage?.id ? hoverColor : 'transparent',
               }}
               onMouseOver={(e: any) =>
-                image.url !== mainImage.url &&
+                image?.id !== mainImage?.id &&
                 (e.target.style.borderColor = hoverColor)
               }
               onMouseLeave={(e: any) =>
-                image.url !== mainImage.url &&
+                image?.id !== mainImage?.id &&
                 (e.target.style.borderColor = 'transparent')
               }
               onClick={() => {
