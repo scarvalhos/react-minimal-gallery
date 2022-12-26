@@ -70,14 +70,14 @@ export const ReactMinimalGallery: React.FC<ReactMinimalGalleryProps> = ({
         }}
       >
         <button
-          className="tw-cursor-pointer tw-w-8 tw-h-8 tw-flex tw-items-center tw-justify-center tw-rounded-full tw-border-none tw-bg-black tw-bg-opacity-20 hover:tw-bg-opacity-50 tw-transition-all tw-absolute tw-left-2 tw-top-[50%] -tw-translate-y-[50%] tw-z-[999]"
+          className="tw-cursor-pointer tw-w-8 tw-h-8 tw-flex tw-items-center tw-justify-center tw-rounded-full tw-border-none tw-bg-black tw-bg-opacity-20 hover:tw-bg-opacity-50 tw-transition-all tw-absolute tw-left-2 tw-top-[50%] -tw-translate-y-[50%] tw-z-40"
           disabled={count === 0}
           onClick={() => setCount(count - 1)}
         >
           <TbArrowLeft className="tw-w-4 tw-h-4 tw-text-white" />
         </button>
         <button
-          className="tw-cursor-pointer tw-w-8 tw-h-8 tw-flex tw-items-center tw-justify-center tw-rounded-full tw-border-none tw-bg-black tw-bg-opacity-20 hover:tw-bg-opacity-50 tw-transition-all tw-absolute tw-right-2 tw-top-[50%] -tw-translate-y-[50%] tw-z-[999]"
+          className="tw-cursor-pointer tw-w-8 tw-h-8 tw-flex tw-items-center tw-justify-center tw-rounded-full tw-border-none tw-bg-black tw-bg-opacity-20 hover:tw-bg-opacity-50 tw-transition-all tw-absolute tw-right-2 tw-top-[50%] -tw-translate-y-[50%] tw-z-40"
           disabled={count === imagesArr.length - 1}
           onClick={() => setCount(count + 1)}
         >
@@ -101,7 +101,7 @@ export const ReactMinimalGallery: React.FC<ReactMinimalGalleryProps> = ({
       <div className="tw-w-full tw-flex tw-flex-row tw-overflow-hidden">
         <div
           className={c(
-            'tw-flex tw-flex-row tw-space-x-[0.5px] tw-rounded-sm tw-transition-all'
+            'tw-flex tw-flex-row tw-space-x-1 tw-rounded-sm tw-transition-all'
           )}
           style={{
             transform: `translateX(${translate})`,
