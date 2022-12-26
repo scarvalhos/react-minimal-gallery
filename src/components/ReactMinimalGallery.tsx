@@ -70,14 +70,14 @@ export const ReactMinimalGallery: React.FC<ReactMinimalGalleryProps> = ({
         }}
       >
         <button
-          className="tw-cursor-pointer tw-w-8 tw-h-8 tw-flex tw-items-center tw-justify-center tw-rounded-full tw-border-none tw-bg-black tw-bg-opacity-20 hover:tw-bg-opacity-50 tw-transition-all tw-absolute tw-left-2 tw-top-[50%] -tw-translate-y-[50%] tw-z-40"
+          className="tw-cursor-pointer tw-w-8 tw-h-8 tw-flex tw-items-center tw-justify-center tw-rounded-full tw-border-none tw-bg-black tw-bg-opacity-20 hover:tw-bg-opacity-50 tw-transition-all tw-absolute tw-left-2 tw-top-[50%] -tw-translate-y-[50%] tw-z-10"
           disabled={count === 0}
           onClick={() => setCount(count - 1)}
         >
           <TbArrowLeft className="tw-w-4 tw-h-4 tw-text-white" />
         </button>
         <button
-          className="tw-cursor-pointer tw-w-8 tw-h-8 tw-flex tw-items-center tw-justify-center tw-rounded-full tw-border-none tw-bg-black tw-bg-opacity-20 hover:tw-bg-opacity-50 tw-transition-all tw-absolute tw-right-2 tw-top-[50%] -tw-translate-y-[50%] tw-z-40"
+          className="tw-cursor-pointer tw-w-8 tw-h-8 tw-flex tw-items-center tw-justify-center tw-rounded-full tw-border-none tw-bg-black tw-bg-opacity-20 hover:tw-bg-opacity-50 tw-transition-all tw-absolute tw-right-2 tw-top-[50%] -tw-translate-y-[50%] tw-z-10"
           disabled={count === imagesArr.length - 1}
           onClick={() => setCount(count + 1)}
         >
