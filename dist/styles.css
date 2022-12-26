@@ -112,8 +112,8 @@
   right: 0.5rem
 }
 
-.tw-z-\[999\] {
-  z-index: 999
+.tw-z-40 {
+  z-index: 40
 }
 
 .tw-flex {
@@ -175,10 +175,10 @@
   margin-bottom: calc(0.25rem * var(--tw-space-y-reverse))
 }
 
-.tw-space-x-\[0\.5px\] > :not([hidden]) ~ :not([hidden]) {
+.tw-space-x-1 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 0;
-  margin-right: calc(0.5px * var(--tw-space-x-reverse));
-  margin-left: calc(0.5px * calc(1 - var(--tw-space-x-reverse)))
+  margin-right: calc(0.25rem * var(--tw-space-x-reverse));
+  margin-left: calc(0.25rem * calc(1 - var(--tw-space-x-reverse)))
 }
 
 .tw-overflow-hidden {

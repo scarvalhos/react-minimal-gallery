@@ -1,5 +1,5 @@
 Arguments: 
-  /home/samcarvalhos/.nvm/versions/node/v14.21.1/bin/node /usr/bin/yarn
+  /home/samcarvalhos/.nvm/versions/node/v14.21.1/bin/node /usr/bin/yarn build
 
 PATH: 
   /home/samcarvalhos/.nvm/versions/node/v14.21.1/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin
@@ -27,7 +27,7 @@ Trace:
 npm manifest: 
   {
     "name": "react-minimal-gallery",
-    "version": "1.2.1",
+    "version": "1.2.2",
     "description": "A minimalist image gallery package build with tailwincss for simple projects",
     "main": "./dist/index.js",
     "author": "Samara Carvalho",
