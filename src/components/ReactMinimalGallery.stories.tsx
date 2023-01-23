@@ -8,6 +8,7 @@ const Template: ComponentStory<typeof ReactMinimalGallery> = (args) => (
 )
 
 export const ReactMinimalGalleryTemplate = Template.bind({})
+
 ReactMinimalGalleryTemplate.args = {
   hoverColor: '#2DC573',
   width: '400px',

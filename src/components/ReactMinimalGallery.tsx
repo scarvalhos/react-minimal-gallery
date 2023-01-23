@@ -22,6 +22,8 @@ interface StateProps {
   count?: number
   x?: number
   y?: number
+  h?: number
+  w?: number
 }
 
 export const ReactMinimalGallery: React.FC<ReactMinimalGalleryProps> = ({
@@ -44,7 +46,7 @@ export const ReactMinimalGallery: React.FC<ReactMinimalGalleryProps> = ({
     [images]
   )
 
-  const [{ hover, count, x, y, translate }, dispatch] = React.useReducer(
+  const [{ hover, count, x, y, h, w, translate }, dispatch] = React.useReducer(
     (prev: StateProps, next: StateProps) => {
       return { ...prev, ...next }
     },
@@ -53,6 +55,8 @@ export const ReactMinimalGallery: React.FC<ReactMinimalGalleryProps> = ({
       count: 0,
       x: undefined,
       y: undefined,
+      h: undefined,
+      w: undefined,
       translate: '0px',
     }
   )
@@ -80,92 +84,101 @@ export const ReactMinimalGallery: React.FC<ReactMinimalGalleryProps> = ({
   }, [count, imagesArr, tw])
 
   return (
-    <Container
-      // @ts-ignore
-      className={containerClassName}
-      style={{
-        width,
-        height:
-          typeof height === 'string' ? strtonum(height) + tw : height + tw,
-      }}
-    >
-      <MainImageContainer
+    <div className="tw-w-full tw-h-full">
+      <Container
+        // @ts-ignore
+        className={containerClassName}
         style={{
           width,
-          height,
+          height:
+            typeof height === 'string' ? strtonum(height) + tw : height + tw,
         }}
       >
-        <ArrowButton
-          side="left"
-          disabled={count === 0}
-          onClick={() => dispatch({ count: count! - 1 })}
-        >
-          <TbArrowLeft className="tw-w-4 tw-h-4 tw-text-white" />
-        </ArrowButton>
-
-        <ArrowButton
-          side="right"
-          disabled={count === imagesArr.length - 1}
-          onClick={() => dispatch({ count: count! + 1 })}
-        >
-          <TbArrowRight className="tw-w-4 tw-h-4 tw-text-white" />
-        </ArrowButton>
-
-        <MainImage
-          hover={hover ? 'true' : 'false'}
-          className={mainImageClassName}
+        <MainImageContainer
           style={{
-            backgroundImage: `url(${mainImage?.url})`,
-            transformOrigin: `${x}px ${y}px`,
-            transform: hover ? 'scale(2)' : 'scale(1)',
-          }}
-          onClick={() => dispatch({ hover: !hover })}
-          onMouseLeave={() => dispatch({ hover: false })}
-          onMouseMove={(e) => {
-            if (hover) {
-              dispatch({ y: e.clientY, x: e.clientX })
-            }
-          }}
-        />
-      </MainImageContainer>
-
-      <ThumbnailsContainer>
-        <ThumbnailsContent
-          style={{
-            transform: `translateX(${translate})`,
+            width,
+            height,
           }}
         >
-          {imagesArr.map((image) => (
-            <Thumbnail
-              key={image.id}
-              style={{
-                width: `${tw}px`,
-                height: `${tw}px`,
-                backgroundImage: `url(${image?.url})`,
-                borderColor:
-                  image?.id === mainImage?.id ? hoverColor : 'transparent',
-              }}
-              onMouseOver={(e: any) =>
-                image?.id !== mainImage?.id &&
-                (e.target.style.borderColor = hoverColor)
-              }
-              onMouseLeave={(e: any) =>
-                image?.id !== mainImage?.id &&
-                (e.target.style.borderColor = 'transparent')
-              }
-              onClick={() => {
+          <ArrowButton
+            side="left"
+            disabled={count === 0}
+            onClick={() => dispatch({ count: count! - 1 })}
+          >
+            <TbArrowLeft className="tw-w-4 tw-h-4 tw-text-white" />
+          </ArrowButton>
+
+          <ArrowButton
+            side="right"
+            disabled={count === imagesArr.length - 1}
+            onClick={() => dispatch({ count: count! + 1 })}
+          >
+            <TbArrowRight className="tw-w-4 tw-h-4 tw-text-white" />
+          </ArrowButton>
+
+          <MainImage
+            hover={hover ? 'true' : 'false'}
+            className={mainImageClassName}
+            style={{
+              width,
+              height,
+              backgroundImage: `url(${mainImage?.url})`,
+              transformOrigin: `${(x! * 100) / w!}% ${(y! * 100) / h!}%`,
+              transform: hover ? 'scale(1.5)' : 'scale(1)',
+            }}
+            onClick={() => dispatch({ hover: !hover })}
+            onMouseLeave={() => dispatch({ hover: false })}
+            onMouseMove={(e) => {
+              if (hover) {
                 dispatch({
-                  count: Number(
-                    imagesArr.lastIndexOf(
-                      imagesArr.find((i) => i.id === image.id) as any
-                    )
-                  ),
+                  y: e.clientY,
+                  x: e.clientX,
+                  h: e.screenY,
+                  w: e.screenX,
                 })
-              }}
-            />
-          ))}
-        </ThumbnailsContent>
-      </ThumbnailsContainer>
-    </Container>
+              }
+            }}
+          />
+        </MainImageContainer>
+
+        <ThumbnailsContainer>
+          <ThumbnailsContent
+            style={{
+              transform: `translateX(${translate})`,
+            }}
+          >
+            {imagesArr.map((image) => (
+              <Thumbnail
+                key={image.id}
+                style={{
+                  width: `${tw}px`,
+                  height: `${tw}px`,
+                  backgroundImage: `url(${image?.url})`,
+                  borderColor:
+                    image?.id === mainImage?.id ? hoverColor : 'transparent',
+                }}
+                onMouseOver={(e: any) =>
+                  image?.id !== mainImage?.id &&
+                  (e.target.style.borderColor = hoverColor)
+                }
+                onMouseLeave={(e: any) =>
+                  image?.id !== mainImage?.id &&
+                  (e.target.style.borderColor = 'transparent')
+                }
+                onClick={() => {
+                  dispatch({
+                    count: Number(
+                      imagesArr.lastIndexOf(
+                        imagesArr.find((i) => i.id === image.id) as any
+                      )
+                    ),
+                  })
+                }}
+              />
+            ))}
+          </ThumbnailsContent>
+        </ThumbnailsContainer>
+      </Container>
+    </div>
   )
 }
