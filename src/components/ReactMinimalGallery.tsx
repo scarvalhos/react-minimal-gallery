@@ -25,7 +25,7 @@ interface StateProps {
 }
 
 export const ReactMinimalGallery: React.FC<ReactMinimalGalleryProps> = ({
-  containerClassName = 'tw-w-[300px] tw-space-y-1',
+  containerClassName,
   mainImageClassName,
   thumbnailWidth = 100,
   hoverColor,
@@ -117,6 +117,7 @@ export const ReactMinimalGallery: React.FC<ReactMinimalGalleryProps> = ({
           style={{
             backgroundImage: `url(${mainImage?.url})`,
             transformOrigin: `${x}px ${y}px`,
+            transform: hover ? 'scale(2)' : 'scale(1)',
           }}
           onClick={() => dispatch({ hover: !hover })}
           onMouseLeave={() => dispatch({ hover: false })}

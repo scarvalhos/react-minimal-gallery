@@ -1,11 +1,13 @@
 import tw from 'tailwind-styled-components'
 
 export const Container = tw.div`
-  tw-rounded-sm
+  tw-space-y-1
 `
 
 export const MainImageContainer = tw.div`
-  tw-overflow-hidden tw-rounded-sm tw-relative
+  tw-overflow-hidden
+  tw-rounded-sm
+  tw-relative
 `
 
 interface MainImageProps {
@@ -14,9 +16,7 @@ interface MainImageProps {
 
 export const MainImage = tw.div<MainImageProps>`
   ${({ hover }) =>
-    hover === 'true'
-      ? 'tw-scale-[175%] tw-cursor-zoom-out'
-      : 'tw-scale-100 tw-cursor-zoom-in'}
+    hover === 'true' ? 'tw-cursor-zoom-out' : 'tw-cursor-zoom-in'}
 
   tw-bg-cover
   tw-bg-center
