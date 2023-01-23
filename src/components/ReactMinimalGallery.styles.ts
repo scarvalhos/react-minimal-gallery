@@ -1,18 +1,16 @@
 import tw from 'tailwind-styled-components'
 
-interface MainImageProps {
-  hover?: 'true' | 'false'
-}
-
-interface ArrowButtonProps {
-  side?: 'left' | 'right'
-}
-
-export const Container = tw.div``
+export const Container = tw.div`
+  tw-rounded-sm
+`
 
 export const MainImageContainer = tw.div`
   tw-overflow-hidden tw-rounded-sm tw-relative
 `
+
+interface MainImageProps {
+  hover?: 'true' | 'false'
+}
 
 export const MainImage = tw.div<MainImageProps>`
   ${({ hover }) =>
@@ -26,6 +24,10 @@ export const MainImage = tw.div<MainImageProps>`
   tw-w-full
   tw-rounded-sm
 `
+
+interface ArrowButtonProps {
+  side?: 'left' | 'right'
+}
 
 export const ArrowButton = tw.button<ArrowButtonProps>`
   ${({ side }) => (side === 'left' ? 'tw-left-2' : 'tw-right-2')}

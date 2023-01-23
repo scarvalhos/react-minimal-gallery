@@ -1,9 +1,8 @@
-import React from 'react'
+import * as React from 'react'
 
 import { TbArrowRight, TbArrowLeft } from 'react-icons/tb'
 import { ReactMinimalGalleryProps } from '../types'
-import { useReactMinimalGallery } from './ReactMinimalGallery.hook'
-import { strtonum } from '../utils'
+import { randomId, strtonum } from '../utils'
 
 import {
   ArrowButton,
@@ -17,6 +16,14 @@ import {
 
 import '../styles.css'
 
+interface StateProps {
+  translate?: string
+  hover?: boolean
+  count?: number
+  x?: number
+  y?: number
+}
+
 export const ReactMinimalGallery: React.FC<ReactMinimalGalleryProps> = ({
   containerClassName = 'tw-w-[300px] tw-space-y-1',
   mainImageClassName,
@@ -26,11 +33,55 @@ export const ReactMinimalGallery: React.FC<ReactMinimalGalleryProps> = ({
   height = 400,
   width = 400,
 }) => {
-  const { count, dispatch, hover, imagesArr, mainImage, translate, tw, x, y } =
-    useReactMinimalGallery({ images, thumbnailWidth })
+  const imagesArr = React.useMemo(
+    () =>
+      images.map((image) => {
+        return {
+          id: randomId(),
+          url: image,
+        }
+      }),
+    [images]
+  )
+
+  const [{ hover, count, x, y, translate }, dispatch] = React.useReducer(
+    (prev: StateProps, next: StateProps) => {
+      return { ...prev, ...next }
+    },
+    {
+      hover: false,
+      count: 0,
+      x: undefined,
+      y: undefined,
+      translate: '0px',
+    }
+  )
+
+  const [mainImage, setMainImage] = React.useState<{
+    id: string
+    url: string
+  } | null>(imagesArr[count!])
+
+  const tw = React.useMemo(
+    () =>
+      typeof thumbnailWidth === 'string'
+        ? strtonum(thumbnailWidth)
+        : thumbnailWidth,
+    [thumbnailWidth]
+  )
+
+  React.useLayoutEffect(() => {
+    dispatch({ count: 0, translate: '0px' })
+  }, [imagesArr])
+
+  React.useEffect(() => {
+    setMainImage(imagesArr[count!])
+    dispatch({ translate: `-${count! * (tw - tw / count!)}px` })
+  }, [count, imagesArr, tw])
 
   return (
     <Container
+      // @ts-ignore
       className={containerClassName}
       style={{
         width,
