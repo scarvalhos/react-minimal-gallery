@@ -27,7 +27,7 @@ Trace:
 npm manifest: 
   {
     "name": "react-minimal-gallery",
-    "version": "1.2.7",
+    "version": "1.2.8",
     "description": "A minimalist image gallery package build with tailwincss for simple projects",
     "main": "./dist/index.js",
     "author": "Samara Carvalho",

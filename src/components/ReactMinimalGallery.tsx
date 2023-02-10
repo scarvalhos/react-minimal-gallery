@@ -114,7 +114,7 @@ export const ReactMinimalGallery: React.FC<ReactMinimalGalleryProps> = ({
           onMouseLeave={() => dispatch({ hover: false })}
           style={{
             transformOrigin: `${x}px ${y}px`,
-            transform: hover ? 'scale(1.5)' : 'scale(1)',
+            transform: hover ? 'scale(2)' : 'scale(1)',
           }}
         />
       </Styles.MainImageContainer>
