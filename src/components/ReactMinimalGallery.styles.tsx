@@ -8,15 +8,6 @@ interface CommonProps {
   style?: object
 }
 
-interface MainImageProps extends Partial<CommonProps> {
-  src?: string
-  hover?: 'true' | 'false'
-  ref: any
-  draggable: boolean
-  onClick: () => void
-  onMouseLeave: () => void
-}
-
 interface ThumbnailProps extends Partial<CommonProps> {
   onClick?: (e: unknown) => unknown
   onMouseOver?: (e: unknown) => unknown
@@ -44,21 +35,6 @@ export const MainImageContainer: React.FC<CommonProps> = ({
   >
     {children}
   </div>
-)
-
-export const MainImage: React.FC<MainImageProps> = ({
-  className,
-  hover,
-  ...props
-}) => (
-  <img
-    {...props}
-    className={c(
-      'tw-object-center tw-object-cover tw-rounded-md tw-h-full tw-w-full',
-      className,
-      hover === 'true' ? 'tw-cursor-zoom-out' : 'tw-cursor-zoom-in'
-    )}
-  />
 )
 
 export const ThumbnailsContainer: React.FC<CommonProps> = ({

@@ -104,16 +104,16 @@
   width: 100%
 }
 
+.tw-cursor-pointer {
+  cursor: pointer
+}
+
 .tw-cursor-zoom-out {
   cursor: zoom-out
 }
 
 .tw-cursor-zoom-in {
   cursor: zoom-in
-}
-
-.tw-cursor-pointer {
-  cursor: pointer
 }
 
 .tw-flex-row {

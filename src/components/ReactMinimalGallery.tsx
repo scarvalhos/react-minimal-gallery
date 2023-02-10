@@ -2,7 +2,7 @@ import * as Styles from './ReactMinimalGallery.styles'
 import * as React from 'react'
 
 import { ReactMinimalGalleryProps } from '../types'
-import { randomId, strtonum } from '../utils'
+import { c, randomId, strtonum } from '../utils'
 
 import '../styles.css'
 
@@ -101,11 +101,14 @@ export const ReactMinimalGallery: React.FC<ReactMinimalGalleryProps> = ({
           height,
         }}
       >
-        <Styles.MainImage
+        <img
           ref={imgRef}
           src={mainImage?.url}
-          hover={hover ? 'true' : 'false'}
-          className={mainImageClassName}
+          className={c(
+            'tw-object-center tw-object-cover tw-rounded-md tw-h-full tw-w-full',
+            hover ? 'tw-cursor-zoom-out' : 'tw-cursor-zoom-in',
+            mainImageClassName
+          )}
           draggable={false}
           onClick={() => dispatch({ hover: !hover })}
           onMouseLeave={() => dispatch({ hover: false })}
